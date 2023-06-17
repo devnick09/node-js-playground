@@ -1,2 +1,2 @@
 # Node-js-playground
-This repository is for learnin Node JS
+This repository is for learning Node JS
