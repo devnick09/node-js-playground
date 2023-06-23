@@ -1,2 +1,10 @@
 <link rel="stylesheet" href="/css/home.css">
 <h1>Codeil | <%= title %></h1>
+
+<section>
+    <h3>Post</h3>
+    <form action="/users/post" method="post">
+        <textarea name="content" cols="30" rows="3" placeholder="type here..."></textarea>
+        <input type="submit" value="Post">
+    </form>
+</section>
