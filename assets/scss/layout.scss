@@ -1,0 +1,29 @@
+body{
+    margin: 0;
+    /* text-align: center; */
+}
+
+header{
+    display: flex;
+    background-color: rgb(51, 106, 255);
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 0 1rem;
+    ul{
+        display: flex;
+        list-style: none;
+        gap: 1rem;
+
+        li{
+            font-size: 1.5rem;
+            a{
+                text-decoration: none;
+                color: white;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
