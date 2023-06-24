@@ -1,7 +1,11 @@
-module.exports.home = function(req, res){
-    // console.log(req.cookies.user_id)
-    // res.cookie('user_id', 9999);
+const Post = require('../models/post')
+
+module.exports.home = async function(req, res){
+    
+    const allPost = await Post.find({}).populate('user').exec();
+
     return res.render('home', {
         title: 'Home',
+        posts: allPost
     });
 }
