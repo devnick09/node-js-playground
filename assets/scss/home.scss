@@ -1,3 +1,17 @@
 body{
     background-color: lightgray;
 }
+
+#home-container{
+    display: flex;
+
+    #feed-posts{
+        width: 70%;
+        padding: 1rem;
+    }
+    #all-friends{
+        width: 30%;
+        padding: 1rem;
+        border-left: 2px solid;
+    }
+}
