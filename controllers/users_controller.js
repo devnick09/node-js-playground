@@ -1,9 +1,23 @@
+const { response } = require('express');
 const User = require('../models/users')
 
-module.exports.userProfile = function(req, res){
-    return res.render('users', {
-        title: "Users",
-    });
+module.exports.userProfile = async function(req, res){
+    var user = await User.findById(req.params.id);
+    if(user){
+        return res.render('users', {
+            title: "Users",
+            profile_user: user
+        });
+    }
+}
+
+module.exports.update = async function(req, res){
+    if(req.user.id == req.params.id){
+        await User.findByIdAndUpdate(req.params.id, req.body);
+        return res.redirect('back');
+    }else{
+        res.status(401).send('Unauthorized');
+    }
 }
 
 module.exports.signUp = function(req, res){

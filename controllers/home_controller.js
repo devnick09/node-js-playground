@@ -1,4 +1,5 @@
 const Post = require('../models/post')
+const User = require('../models/users')
 
 module.exports.home = async function(req, res){
     
@@ -7,10 +8,13 @@ module.exports.home = async function(req, res){
         .populate({path:'comments', populate:{path: 'user'}})
         .exec();
 
+    const allUser = await User.find({});
+
     if (allPost) {
         return res.render('home', {
             title: 'Home',
-            posts: allPost
+            posts: allPost,
+            allUsers: allUser
         });
     }
 }
